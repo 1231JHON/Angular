@@ -8,6 +8,7 @@ import { PedidoComponent } from './pedidos/pedido/pedido.component';
   declarations: [
     AppComponent,
     PedidoComponent
+    
   ],
   imports: [
     BrowserModule

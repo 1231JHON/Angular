@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 interface Persona{ 
   IDCLiente:string,
   DNI:string,
@@ -22,21 +22,28 @@ export class PedidoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  Pedidos:Persona[]=[]
+
 
   nuevoPedido:Persona={ 
-    IDCLiente:'01',
-    DNI:'23445',
-    Nombres:'Juan',
-    Apellidos:'Vargas',
-    Domicilio:'CUltura',
-    Telefono:'992123453',
-    Fecha_Nacimiento:'2014/12/7',
-    Genero:'Masculino',
-    Metros_Cubicos:10,
+    IDCLiente:'',
+    DNI:'',
+    Nombres:'',
+    Apellidos:'',
+    Domicilio:'',
+    Telefono:'',
+    Fecha_Nacimiento:'',
+    Genero:'',
+    Metros_Cubicos:0,
 
   }
   enviar():void
   { 
+    if(this.nuevoPedido.Nombres.trim().length==0)  {
+    console.log('NO paso');
+    return;
+    } 
+    this.Pedidos.push(this.nuevoPedido)
     console.log(this.nuevoPedido);
 
   }
